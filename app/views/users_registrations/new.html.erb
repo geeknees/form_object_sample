@@ -1,0 +1,13 @@
+<%= form_for @user_list, url: users_registration_path, method: :post do |f| %>
+  <%= f.fields_for :users do |c| %>
+    <%= c.text_field :name %>
+  <% end %>
+
+  <%= f.fields_for :users do |c| %>
+    <%= c.text_field :name %>
+  <% end %>
+
+  <p>
+    <%= f.submit "Submit" %>
+  </p>
+<% end %>
