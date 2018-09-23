@@ -9,16 +9,13 @@ class Registration
 
   def register
     if valid?
-      # Do something interesting here
-      # - create user
-      # - send notifications
-      # - log events, etc.
+      create_user
     end
   end
 
   private
 
   def create_user
-    # ...
+    User.create!(name: name)
   end
 end

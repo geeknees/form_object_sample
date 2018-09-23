@@ -14,17 +14,18 @@ class UsersRegistration
 
   def register
     if valid?
-      # Do something interesting here
-      # - create user
-      # - send notifications
-      # - log events, etc.
+      create_user
     end
   end
 
   private
 
   def create_user
-    # ...
+    ActiveRecord::Base.transaction do
+      self.users.each do |user|
+        User.create!(name: user.name)
+      end
+    end
   end
 
 end
